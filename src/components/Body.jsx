@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function Body() {
+export default function Body(props) {
+  const {playersearch} = props;
+
   return (
-    <div>Body</div>
+    <div>{playersearch}</div>
   )
 }
