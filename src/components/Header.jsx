@@ -21,8 +21,9 @@ export default function Header(props) {
     <div className='py-3 px-2 sticky top-0 bg-slate-900 sticky'>
       
       {/* Search Bar */}
-      <div className="relative">
-        <form onSubmit={submitSearchPlayer} className='max-w-md '>
+      <div className="flex">
+        <FontAwesomeIcon icon={faChartColumn} className='text-5xl py-2 flex-none pr-4' /> {/* replace with Site Icon at some point */}
+        <form onSubmit={submitSearchPlayer} className='max-w-md flex-auto py-4'>
           <div className='relative'>
             <input  value={input} 
                     onInput={handleInput}
@@ -37,6 +38,9 @@ export default function Header(props) {
             </button>
           </div>
         </form>
+        <div className='py-5 pl-4 '>xta Buttons</div>
+        <div className='py-5 pl-2 gap-2 '>xta Buttons</div>
+        <div className='py-5 pl-2 gap-2 '>xta Buttons</div>
       </div>
 
           {/* Drop down menus */}
