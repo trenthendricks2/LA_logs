@@ -7,7 +7,7 @@ function App() {
   const [playersearch, setPlayersearch] = useState()
 
   function searchPlayer (playerName) {
-    console.log(playerName)
+    
     setPlayersearch(playerName)
   }
 
