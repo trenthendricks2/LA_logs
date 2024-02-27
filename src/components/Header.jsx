@@ -1,7 +1,8 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faChartColumn, faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import { useState, useId } from 'react'
+import { useState, useId, } from 'react'
+
 
 export default function Header(props) {
   const {searchPlayer} = props;
@@ -11,6 +12,7 @@ export default function Header(props) {
   const [classDropShow, setClassDropShow] = useState(false)
   const [raidGuideDropShow, setRaidGuideDropShow] = useState(false)
   const [classGuideDropShow, setClassGuideDropShow] = useState(false)
+  
 
   const handleInput = (e) => {
     setInput(e.target.value)
@@ -21,10 +23,29 @@ export default function Header(props) {
     searchPlayer(input)
   }
 
+  
+  const raidListener = () => {
+    setRaidDropShow(raidDropShow===false)
+    document.removeEventListener("click", raidListener)
+  }
+
+  const classListener = () => {
+    setClassDropShow(classDropShow==false)
+    document.removeEventListener("click", classListener)
+  }
+  const raidGuideListener = () => {
+    setRaidGuideDropShow(raidGuideDropShow==false)
+    document.removeEventListener("click", raidGuideListener)
+  }
+  const classGuideListener = () => {
+    setClassGuideDropShow(classGuideDropShow==false)
+    document.removeEventListener("click", classGuideListener)
+  }
+
   return (
     <div className='py-3 px-2 sticky top-0 bg-slate-900 sticky'>
       
-      {/* Search Bar */}
+  {/* Search Bar */}
       <div className="flex">
         <FontAwesomeIcon icon={faChartColumn} className='text-5xl py-2 flex-none pr-4' /> {/* replace with Site Icon at some point */}
         <form onSubmit={submitSearchPlayer} className='max-w-md flex-auto py-4'>
@@ -47,11 +68,16 @@ export default function Header(props) {
         <div className='py-5 pl-2 gap-2 '>xta Buttons</div>
       </div>
          
-          {/* Drop down menus */}
-      <div className='flex'>
+  {/* Drop down menus */}
+      <div className='flex' >
 
         {/* Raid dropdown */}
-        <div className='relative inline-block text-left'>
+        <div className='relative inline-block text-left'
+             onMouseLeave={()=>{ 
+              if(raidDropShow===true) {
+                document.addEventListener("click", raidListener)}}
+              }
+        >
           <div className=''>
             <button type="button"
                     id="menu-button"
@@ -88,8 +114,13 @@ export default function Header(props) {
           }
         </div>
 
-          {/* Classes Dropdown */}
-        <div className='relative inline-block text-left pl-5'>
+        {/* Classes Dropdown */}
+        <div className='relative inline-block text-left pl-5'
+             onMouseLeave={()=>{ 
+              if(classDropShow===true) {
+                document.addEventListener("click", classListener)}}
+              }
+        >
           <div className=''>
             <button type="button"
                     id="menu-button"
@@ -121,8 +152,13 @@ export default function Header(props) {
           }
         </div>
 
-          {/* Raidguide dropdown */}
-        <div className='relative inline-block text-left pl-5'>
+        {/* Raidguide dropdown */}
+        <div className='relative inline-block text-left pl-5'
+             onMouseLeave={()=>{ 
+              if(raidGuideDropShow===true) {
+                document.addEventListener("click", raidGuideListener)}}
+              }
+        >
           <div className=''>
             <button type="button"
                     id="menu-button"
@@ -160,7 +196,12 @@ export default function Header(props) {
         </div>
 
         {/* class guide dropdown */}
-        <div className='relative inline-block text-left pl-5'>
+        <div className='relative inline-block text-left pl-5'
+             onMouseLeave={()=>{ 
+              if(classGuideDropShow===true) {
+                document.addEventListener("click", classGuideListener)}}
+              }
+        >
           <div className=''>
             <button type="button"
                     id="menu-button"
