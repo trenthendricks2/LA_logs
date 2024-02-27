@@ -7,6 +7,7 @@ export default function Header(props) {
   const {searchPlayer} = props;
   const id = useId();
   const [input, setInput] = useState("");
+  const [raidDropShow, setRaidDropShow] = useState(false)
 
   const handleInput = (e) => {
     setInput(e.target.value)
@@ -42,9 +43,50 @@ export default function Header(props) {
         <div className='py-5 pl-2 gap-2 '>xta Buttons</div>
         <div className='py-5 pl-2 gap-2 '>xta Buttons</div>
       </div>
-
+         
           {/* Drop down menus */}
-      
+      <div className='flex'>
+        <div className='relative inline-block text-left'>
+          <div className=''>
+            <button type="button"
+                    id="menu-button"
+                    aria-expanded="true"
+                    aria-haspopup="true"
+                    onClick={()=>{setRaidDropShow(!raidDropShow)}}
+                    class="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-sm font-semibold text-gray-400">
+              Raids
+              <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          { raidDropShow===true ? 
+              <div class=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-gray-800 text-gray-400" 
+                   role="menu" 
+                   aria-orientation="vertical" 
+                   aria-labelledby="menu-button" 
+                   tabindex="-1">
+                <div class="py-1" role="none">
+                  <a href="#" class=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Ivory Tower</a>
+                </div>
+                <div class="py-1" role="none">
+                  <a href="#" class=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">Akkan</a>
+                  <a href="#" class=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-3">Kayangel</a>
+                </div>
+                <div class="py-1" role="none">
+                  <a href="#" class=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-4">Brelshaza</a>
+                  <a href="#" class=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-5">Clown</a>
+                </div>
+                <div class="py-1" role="none">
+                  <a href="#" class=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-6">Old Conent</a>
+                </div>
+              </div> 
+            : ""
+          }
+        </div>
+      </div>  
+    
+    
     </div>
   )
 }
