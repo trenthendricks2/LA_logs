@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faChartColumn, faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { useState, useId, } from 'react'
+import ClassDropdown from './ClassDropdown'
 
 
 export default function Header(props) {
@@ -71,7 +72,7 @@ export default function Header(props) {
   {/* Drop down menus */}
       <div className='flex' >
 
-        {/* Raid dropdown */}
+    {/* Raid dropdown */}
         <div className='relative inline-block text-left'
              onMouseLeave={()=>{ 
               if(raidDropShow===true) {
@@ -90,7 +91,7 @@ export default function Header(props) {
             </button>
           </div>
           { raidDropShow===true ? 
-              <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-gray-800 text-gray-400" 
+              <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-500 rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-gray-400" 
                    role="menu" 
                    aria-orientation="vertical" 
                    aria-labelledby="menu-button" 
@@ -114,43 +115,12 @@ export default function Header(props) {
           }
         </div>
 
-        {/* Classes Dropdown */}
-        <div className='relative inline-block text-left pl-5'
-             onMouseLeave={()=>{ 
-              if(classDropShow===true) {
-                document.addEventListener("click", classListener)}}
-              }
-        >
-          <div className=''>
-            <button type="button"
-                    id="menu-button"
-                    aria-expanded="true"
-                    aria-haspopup="true"
-                    onClick={()=>{setClassDropShow(!classDropShow)}}
-                    className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-sm font-semibold text-gray-400">
-              Classes
-              <FontAwesomeIcon icon={faAngleDown} className='relative left-1 top-1'/>
-            </button>
-          </div>
-          { classDropShow===true ? 
-              <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-gray-800 text-gray-400" 
-                   role="menu" 
-                   aria-orientation="vertical" 
-                   aria-labelledby="menu-button" 
-                   tabindex="-1">
-                <div className="py-1" role="none">
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Warrior <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">Mages <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-3">Fighters <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-4">Gunners <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-5">Assassins <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-6">Specialists <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                </div>
-                
-              </div> 
-            : ""
-          }
-        </div>
+    {/* Classes Dropdown */}
+        <ClassDropdown 
+          listener={classListener}
+          dropShow={classDropShow}
+          setDropShow={setClassDropShow}
+        />
 
         {/* Raidguide dropdown */}
         <div className='relative inline-block text-left pl-5'
@@ -171,7 +141,7 @@ export default function Header(props) {
             </button>
           </div>
           { raidGuideDropShow===true ? 
-            <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-gray-800 text-gray-400" 
+            <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-500 rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-gray-400" 
               role="menu" 
               aria-orientation="vertical" 
               aria-labelledby="menu-button" 
@@ -196,42 +166,11 @@ export default function Header(props) {
         </div>
 
         {/* class guide dropdown */}
-        <div className='relative inline-block text-left pl-5'
-             onMouseLeave={()=>{ 
-              if(classGuideDropShow===true) {
-                document.addEventListener("click", classGuideListener)}}
-              }
-        >
-          <div className=''>
-            <button type="button"
-                    id="menu-button"
-                    aria-expanded="true"
-                    aria-haspopup="true"
-                    onClick={()=>{setClassGuideDropShow(!classGuideDropShow)}}
-                    className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-sm font-semibold text-gray-400">
-              Class Guides
-              <FontAwesomeIcon icon={faAngleDown} className='relative left-1 top-1'/>
-            </button>
-          </div>
-          { classGuideDropShow===true ? 
-              <div className=" absolute z-10 mt-2 w-30 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-gray-800 text-gray-400" 
-                   role="menu" 
-                   aria-orientation="vertical" 
-                   aria-labelledby="menu-button" 
-                   tabindex="-1">
-                <div className="py-1" role="none">
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Warrior <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Mages <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Fighters <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Gunners <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Assassins <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                  <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Specialists <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                </div>
-                
-              </div> 
-            : ""
-          }
-        </div>
+        <ClassDropdown 
+          listener={classGuideListener}
+          dropShow={classGuideDropShow}
+          setDropShow={setClassGuideDropShow}
+        />
       </div>
         
     
