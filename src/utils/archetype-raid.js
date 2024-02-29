@@ -40,7 +40,7 @@ export const archetype = {
       }
     },
     Fighters: {
-        Galvier: {
+        Glavier: {
           Guide: "https://docs.google.com/document/d/1X6zj1AJBUiYpADNKCIaeJsQYT1IZc8V_2YeXFz-KuYc/edit",
           Logs: "#"
         },
@@ -98,3 +98,106 @@ export const archetype = {
         }
     }
   }
+
+export const raids = { 
+  Ivory_Tower: {
+    Gate_1: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_2: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_3: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_4: {
+      Guide: "",
+      Logs: ""
+    },
+  },
+  Akkan: {
+    Gate_1: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_2: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_3: {
+      Guide: "",
+      Logs: ""
+    },
+  },
+  Kayangel: {
+    Gate_1: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_2: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_3: {
+      Guide: "",
+      Logs: ""
+    },
+  },
+  Brelshaza: {
+    Gate_1: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_2: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_3: {
+      Guide: "",
+      Logs: ""
+    },
+    Gate_4: {
+      Guide: "",
+      Logs: ""
+    },
+  },
+  Old_Content: {
+    Clown: {
+      Gate_1: {
+        Guide: "",
+        Logs: ""
+      },
+      Gate_2: {
+        Guide: "",
+        Logs: ""
+      },
+      Gate_3: {
+        Guide: "",
+        Logs: ""
+      },
+    },
+    Vykas: {
+      Gate_1: {
+        Guide: "",
+        Logs: ""
+      },
+      Gate_2: {
+        Guide: "",
+        Logs: ""
+      },
+    },
+    Valtan: {
+      Gate_1: {
+        Guide: "",
+        Logs: ""
+      },
+      Gate_2: {
+        Guide: "",
+        Logs: ""
+      },
+    }
+  },
+}
