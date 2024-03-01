@@ -26,14 +26,34 @@ export default function Dropdown(props) {
 
     const showClassDropDown = (currentClass) => {
       if(currentClass === "Fighters") {
-        console.log("fighters")
+        setClassDropShow('Fighters')
+      }
+
+      if(currentClass === "Mages") {
+        setClassDropShow('Mages')
+      }
+
+      if(currentClass === "Warriors") {
+        setClassDropShow('Warriors')
+      }
+
+      if(currentClass === "Assassins") {
+        setClassDropShow('Assassins')
+      }
+
+      if(currentClass === "Specialists") {
+        setClassDropShow('Specialists')
+      }
+
+      if(currentClass === "Gunners") {
+        setClassDropShow('Gunners')
       }
     }
     
 
   return (
-    <div  className='relative inline-block text-left pl-5' >
-          <div className=''>
+    <div  className='inline-block text-left pl-5' >
+          <div key={dropName + "1"} className=''>
             <button 
                     id={dropName}
                     onClick={()=>{setDropShow(!dropShow)}}
@@ -42,42 +62,58 @@ export default function Dropdown(props) {
               <FontAwesomeIcon icon={faAngleDown} className='relative left-1 top-1'/>
             </button>
           </div>
-          <div>
+          <div className='flex'>
             { dropShow===true ? 
-                <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-gray-400" >
-                  <div className="py-1">
-                  
-                      {Object.keys(archetype).map( (type, typeIndex) => {
+                <div className=" absolute mt-1 w-24 origin-top-right rounded-md bg-gray-800 shadow-lg text-gray-400" >
+                  <div className='flex'>
+                    <div className='inline-block text-left rounded-md'>
+                    {Object.keys(archetype.classes).map( (type, typeIndex) => {
                         const currentClass = type
-                        console.log(currentClass)
                         return (
-                          <div  key={type} className=" block px-4 py-2 text-sm hover:bg-gray-700">
-                            <button id={currentClass}>{type} <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' onClick={() => {
-                              
-                            }} /></button>
+                          <div  key={currentClass} 
+                                className="" 
+                                onClick={() => {showClassDropDown(currentClass)}}>
+                            <button className='inline-flex w-full justify-left px-3 py-2 pr-5 hover:bg-gray-700 text-sm hover:rounded-md' id={currentClass}>{currentClass}<FontAwesomeIcon icon={faAngleRight} className='absolute right-1'/></button>
                           </div>
 
-                          
-                          /*{ <div key={type}>
-                            <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem">{type} <FontAwesomeIcon icon={faAngleRight} className='absolute right-3' /></a>
-                          
-                            {Object.keys(archetype.Fighters).map( (className, classNameIndex) => {
-                              return(
-                                <div className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" key={className + classNameIndex}>
-                                  {className}
-                                </div>
-                              )
-                            })}
-                          </div>}*/
                         )
-                      })}  
-                    
+                      })} 
+                      </div>
+                      <div className='relative r-10 inline-block text-left px-4'>
+                        { classDropShow==="Fighters" ? 
+                              <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
+                                Fighters
+                              </div>:
+                          classDropShow==="Mages" ? 
+                              <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
+                                Mages
+                              </div>:
+                          classDropShow==="Assassins" ? 
+                            <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
+                              Assassins
+                            </div>:
+                          classDropShow==="Warriors" ? 
+                            <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
+                              Warriors
+                            </div>:
+                          classDropShow==="Gunners" ? 
+                            <div className=" w-28 py-1  rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
+                              Gunners
+                            </div>:
+                          classDropShow==="Specialists" ? 
+                            <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
+                              Specialists
+                            </div>:
+                          "" }
+                      </div>
                   </div>
-                  
                 </div> 
               : ""
             }
+            
+
           </div>
         </div>
   )
 }
+

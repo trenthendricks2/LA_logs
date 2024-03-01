@@ -1,25 +1,26 @@
 export const archetype = {
-    Warriors: {
-      Berserker: {
-        Guide: "https://docs.google.com/document/d/1QpdFMV-y0tEyxg4GlDxwKprD9li3sgEV3fnSyH_kCqk/edit#heading=h.m6rcokaux2q",
-        Logs: "#"
-      },
-      Destroyer: {
-        Guide: "https://docs.google.com/document/d/1lh3uX7-3n6rI7uiMFk032dot1fAIu5DVxQKz99X9vX0/edit#heading=h.m6rcokaux2q",
-        Logs: ""
-      },
-      Gunlancer: {
-        Guide: "https://docs.google.com/document/d/1EPVvtqL_5URvU6H6RP89pWi_0qmo7RJJAsqA4rGuGac/edit?usp=sharing",
-        Logs: ""
-      },
-      Paladin: {
-        Guide: "https://docs.google.com/document/d/13q48wuWMMJ8bTJHf1ro_xOECS_OOzaEv0y47msJxt4g/edit",
-        Logs: ""
-      },
-      Slayer: {
-        Guide: "https://docs.google.com/document/d/1hZuP7TRwvaNDBnt7QKZJB-TdJLKvgtRdxhQr104l5Qg/edit#heading=h.m6rcokaux2q",
-        Logs: ""
-      },
+    classes: {
+      Warriors: {
+        Berserker: {
+          Guide: "https://docs.google.com/document/d/1QpdFMV-y0tEyxg4GlDxwKprD9li3sgEV3fnSyH_kCqk/edit#heading=h.m6rcokaux2q",
+          Logs: "#"
+        },
+        Destroyer: {
+          Guide: "https://docs.google.com/document/d/1lh3uX7-3n6rI7uiMFk032dot1fAIu5DVxQKz99X9vX0/edit#heading=h.m6rcokaux2q",
+          Logs: ""
+        },
+        Gunlancer: {
+          Guide: "https://docs.google.com/document/d/1EPVvtqL_5URvU6H6RP89pWi_0qmo7RJJAsqA4rGuGac/edit?usp=sharing",
+          Logs: ""
+        },
+        Paladin: {
+          Guide: "https://docs.google.com/document/d/13q48wuWMMJ8bTJHf1ro_xOECS_OOzaEv0y47msJxt4g/edit",
+          Logs: ""
+        },
+        Slayer: {
+          Guide: "https://docs.google.com/document/d/1hZuP7TRwvaNDBnt7QKZJB-TdJLKvgtRdxhQr104l5Qg/edit#heading=h.m6rcokaux2q",
+          Logs: ""
+        },
     },
     Mages: {
       Arcanist: {
@@ -96,7 +97,7 @@ export const archetype = {
             Guide: "https://docs.google.com/document/d/1OlCBWkiQRt0odr6BoOotxTpzhDcoEAicv8vJdzJIViI/edit#heading=h.m6rcokaux2q",
             Logs: ""
         }
-    }
+    }}
   }
 
 export const raids = { 
