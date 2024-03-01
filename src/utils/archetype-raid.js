@@ -22,6 +22,25 @@ export const archetype = {
           Logs: ""
         },
     },
+    Assassins: {
+      Deathblade: {
+        Guide: "https://docs.google.com/document/d/1ZLOhLB9bb9AN_Q7_eKukUnqI5E5w5Fb1oqryIA1ml8A/edit#heading=h.m6rcokaux2q",
+        Logs: "#"
+      },
+      Reaper: {
+        Guide: "https://docs.google.com/document/d/1EsAOOw-QXbq5NiPxeAISsII3zE6ZSgyq1WIVgZ8-q7U/edit",
+        Logs: ""
+      },
+      Shadowhunter: {
+        Guide: "https://docs.google.com/document/d/1WMZP4Gj-zAsPGUfJWR382uBNN7m4JHULMpN9tn6bCtA/edit#heading=h.mfn4yd13h1up",
+        Logs: ""
+      },
+      Souleater: {
+        Guide: "https://docs.google.com/document/d/1Da0MFsuencYbmcFMo6cUPBEGubavgsebeYtR7iCtaoQ/edit#heading=h.rkp1tcuxru48",
+        Logs: ""
+      },
+  },
+
     Mages: {
       Arcanist: {
         Guide: "https://docs.google.com/document/d/1MWWgdrTIJBj0WXmAqE4DspVobgMlDx4aaI7ZwCj1-AM/edit#heading=h.m6rcokaux2q",

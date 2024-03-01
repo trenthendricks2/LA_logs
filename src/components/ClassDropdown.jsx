@@ -5,8 +5,8 @@ import { useState, useId, } from 'react'
 import { archetype } from '../utils/archetype-raid'
 
 export default function Dropdown(props) {
-    const {listener, dropShow, setDropShow, divId, dropName} = props
-    const [classDropShow, setClassDropShow] = useState(false)
+    const { dropShow, setDropShow, divId, dropName} = props
+    const [SClassDropShow, setSClassDropShow] = useState(false)
    
 
 
@@ -18,36 +18,62 @@ export default function Dropdown(props) {
         } else {
           document.removeEventListener('click', eventListen)
           setDropShow(false)
+          setSClassDropShow(false)
         }
     }
     if(dropShow===true){
       document.addEventListener('click', eventListen) 
     }
 
-    const showClassDropDown = (currentClass) => {
-      if(currentClass === "Fighters") {
-        setClassDropShow('Fighters')
+    const SubClassDropShow = (c) => {
+      if(c==="Fighters") {
+        setSClassDropShow(c)
       }
+      if(c==="Mages") {
+        setSClassDropShow(c)
+      }
+      if(c==="Warriors") {
+        setSClassDropShow(c)
+      }
+      if(c==="Specialists") {
+        setSClassDropShow(c)
+      }
+      if(c==="Assassins") {
+        setSClassDropShow(c)
+      }
+      if(c==="Gunners") {
+        setSClassDropShow(c)
+      }
+    }
+    
 
-      if(currentClass === "Mages") {
-        setClassDropShow('Mages')
-      }
+    const ArchetypeDropDown = ({name}) => {
+      const subClasses = archetype.classes[name]
+      return(
+        <div key={name}>
+          <div key={name} 
+               className="" 
+               onClick={() => {
+                SubClassDropShow(name)
+               }}>
+            <button className='inline-flex w-full justify-left px-3 py-2 pr-5 hover:bg-gray-700 text-sm hover:rounded-md' id={name + 'classDrop'}>{name}<FontAwesomeIcon icon={faAngleRight} className='absolute right-1'/></button>
+          </div>
+        </div>
+      )
+    }
 
-      if(currentClass === "Warriors") {
-        setClassDropShow('Warriors')
-      }
-
-      if(currentClass === "Assassins") {
-        setClassDropShow('Assassins')
-      }
-
-      if(currentClass === "Specialists") {
-        setClassDropShow('Specialists')
-      }
-
-      if(currentClass === "Gunners") {
-        setClassDropShow('Gunners')
-      }
+    const SubClassDropDown = ({subClassName}) => {
+      return(
+        <div key={subClassName} className=''>
+          {Object.keys(archetype.classes[subClassName]).map((name) => {
+            return (
+              <div>
+                {name}
+              </div>
+            )
+          })}
+        </div>
+      )
     }
     
 
@@ -56,7 +82,12 @@ export default function Dropdown(props) {
           <div key={dropName + "1"} className=''>
             <button 
                     id={dropName}
-                    onClick={()=>{setDropShow(!dropShow)}}
+                    onClick={()=>{
+                      setDropShow(!dropShow)
+                      if (SClassDropShow !== false) {
+                        setSClassDropShow(false)
+                      }
+                    }}
                     className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-sm font-semibold text-gray-400">
               {dropName}
               <FontAwesomeIcon icon={faAngleDown} className='relative left-1 top-1'/>
@@ -65,53 +96,48 @@ export default function Dropdown(props) {
           <div className='flex'>
             { dropShow===true ? 
                 <div className=" absolute mt-1 w-24 origin-top-right rounded-md bg-gray-800 shadow-lg text-gray-400" >
-                  <div className='flex'>
-                    <div className='inline-block text-left rounded-md'>
-                    {Object.keys(archetype.classes).map( (type, typeIndex) => {
-                        const currentClass = type
-                        return (
-                          <div  key={currentClass} 
-                                className="" 
-                                onClick={() => {showClassDropDown(currentClass)}}>
-                            <button className='inline-flex w-full justify-left px-3 py-2 pr-5 hover:bg-gray-700 text-sm hover:rounded-md' id={currentClass}>{currentClass}<FontAwesomeIcon icon={faAngleRight} className='absolute right-1'/></button>
-                          </div>
-
-                        )
-                      })} 
-                      </div>
-                      <div className='relative r-10 inline-block text-left px-4'>
-                        { classDropShow==="Fighters" ? 
-                              <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
-                                Fighters
-                              </div>:
-                          classDropShow==="Mages" ? 
-                              <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
-                                Mages
-                              </div>:
-                          classDropShow==="Assassins" ? 
-                            <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
-                              Assassins
-                            </div>:
-                          classDropShow==="Warriors" ? 
-                            <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
-                              Warriors
-                            </div>:
-                          classDropShow==="Gunners" ? 
-                            <div className=" w-28 py-1  rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
-                              Gunners
-                            </div>:
-                          classDropShow==="Specialists" ? 
-                            <div className=" w-28 py-1 rounded-md bg-gray-800 shadow-lg text-gray-400 hover:bg-gray-700 px-2">
-                              Specialists
-                            </div>:
-                          "" }
-                      </div>
-                  </div>
+                  
+                    {Object.keys(archetype.classes).map((name) =>{
+                      return (
+                        <div key={name}>
+                          <ArchetypeDropDown name={name}/>
+                        </div>
+                      )
+                    })}
                 </div> 
               : ""
             }
-            
-
+            { SClassDropShow === 'Fighters' ? 
+              <div> 
+                <SubClassDropDown subClassName="Fighters"/>
+              </div>
+              :
+              SClassDropShow === 'Mages' ? 
+              <div> 
+                <SubClassDropDown subClassName="Mages"/>
+              </div>
+              :
+              SClassDropShow === 'Warriors' ? 
+              <div> 
+                <SubClassDropDown subClassName="Warriors"/>
+              </div>
+              :
+              SClassDropShow === 'Assassins' ? 
+              <div> 
+                <SubClassDropDown subClassName="Assassins"/>
+              </div>
+              :
+              SClassDropShow === 'Gunners' ? 
+              <div> 
+                <SubClassDropDown subClassName="Gunners"/>
+              </div>
+              :
+              SClassDropShow === 'Specialists' ? 
+              <div> 
+                <SubClassDropDown subClassName="Specialists"/>
+              </div>
+              : ""  
+        }
           </div>
         </div>
   )
