@@ -145,18 +145,18 @@ export default function Header(props) {
                   aria-labelledby="menu-button" 
                   tabIndex="-1">
                   <div className="py-1" role="none">
-                    <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-1">Ivory Tower </a> 
+                    <a href="https://www.lostark.nexus/raids/ivorytower.png" target="_blank"className="block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-1">Ivory Tower </a> 
                   </div>
                   <div className="py-1" role="none">
-                    <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-2">Akkan </a>
-                    <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-3">Kayangel </a>
+                    <a href="https://www.lostark.nexus/raids/akkan.png" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-2">Akkan </a>
+                    <a href="https://www.lostark.nexus/raids/kaya.png" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-3">Kayangel </a>
                   </div>
                   <div className="py-1" role="none">
-                    <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-4">Brelshaza </a>
-                    <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-5">Clown </a>
+                    <a href="https://maxroll.gg/lost-ark/legion-raids/brelshaza-gate-1" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-4">Brelshaza </a>
+                    <a href="https://www.lostark.nexus/raids/clown.png" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-5">Clown </a>
                   </div>
                   <div className="py-1" role="none">
-                    <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-6">Old Conent </a>
+                    <a href="#" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-6">Old Conent </a>
                   </div>
                 </div> 
                 : ""

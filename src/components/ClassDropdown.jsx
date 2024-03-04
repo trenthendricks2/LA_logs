@@ -26,24 +26,7 @@ export default function Dropdown(props) {
     }
 
     const SubClassDropShow = (c) => {
-      if(c==="Fighters") {
-        setSClassDropShow(c)
-      }
-      if(c==="Mages") {
-        setSClassDropShow(c)
-      }
-      if(c==="Warriors") {
-        setSClassDropShow(c)
-      }
-      if(c==="Specialists") {
-        setSClassDropShow(c)
-      }
-      if(c==="Assassins") {
-        setSClassDropShow(c)
-      }
-      if(c==="Gunners") {
-        setSClassDropShow(c)
-      }
+      setSClassDropShow(c)
     }
     
 
