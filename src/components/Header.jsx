@@ -114,8 +114,9 @@ export default function Header(props) {
             <ClassDropdown 
                 dropShow={classDropShow}
                 setDropShow={setClassDropShow}
-                dropName="Classes"
+                dropName="Logs"
                 divId="classes"
+
             />
           </div>
           
@@ -168,7 +169,7 @@ export default function Header(props) {
               <ClassDropdown 
                 dropShow={classGuideDropShow}
                 setDropShow={setClassGuideDropShow}
-                dropName='Class Guides'
+                dropName='Guide'
                 divId="classGuide"
               />
             </div>

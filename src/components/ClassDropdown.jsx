@@ -1,16 +1,15 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faChartColumn, faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import { useState, useId, } from 'react'
+import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { useState, } from 'react'
 import { archetype } from '../utils/archetype-raid'
 
 export default function Dropdown(props) {
     const { dropShow, setDropShow, divId, dropName} = props
     const [SClassDropShow, setSClassDropShow] = useState(false)
    
-
-
     const target = document.querySelector('#'+divId)
+    
     const eventListen = (event) =>{
       const withinBoundaries = event.composedPath().includes(target)
   
@@ -51,14 +50,16 @@ export default function Dropdown(props) {
     }
 
     const SubClassDropDown = ({subClassName}) => {
+      const sClassName = archetype.classes[subClassName]
+
       return(
         <div key={subClassName} className=''>
-          {Object.keys(archetype.classes[subClassName]).map((name) => {
+          {Object.keys(sClassName).map((name) => {
             return (
-              <div className='mt-1 rounded-md bg-gray-800 '>
+              <div className='mt-1 rounded-md bg-gray-800 ' key={name}>
                 <div key={name} >
                   <button id={name+' subClassDrop'} className='inline-flex w-full justify-left px-3 py-2 pr-5 hover:bg-gray-700 text-sm rounded-md text-gray-400 bg-gray-800 border-x border-sky-400'>
-                    {name}
+                     <a href={sClassName[name][dropName]} target="_blank"> {name}</a>
                   </button>
                 </div>  
               </div>
