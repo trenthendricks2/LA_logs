@@ -30,7 +30,6 @@ export default function Dropdown(props) {
     
 
     const ArchetypeDropDown = ({name}) => {
-      const subClasses = archetype.classes[name]
       return(
         <div key={name}>
           <div key={name} 

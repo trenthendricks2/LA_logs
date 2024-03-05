@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faChartColumn, faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { useState, useId, } from 'react'
 import ClassDropdown from './ClassDropdown'
+import RaidDropDown from './RaidDropDown'
 
 
 export default function Header(props) {
@@ -67,29 +68,21 @@ export default function Header(props) {
         <div className='flex' >
 
           {/* Raid dropdown */}
-            <div className='relative inline-block text-left'
-                  onMouseLeave={()=>{ 
-                    if(raidDropShow===true) {
-                      document.addEventListener("click", raidListener)}}
-                    }
-              >
-                <div className=''>
-                  <button type="button"
-                          id="menu-button"
-                          aria-expanded="true"
-                          aria-haspopup="true"
-                          onClick={()=>{setRaidDropShow(!raidDropShow)}}
-                          className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-sm font-semibold text-gray-400">
-                    Raids
-                    <FontAwesomeIcon icon={faAngleDown} className='relative left-1 top-1'/>
-                  </button>
-                </div>
-                { raidDropShow===true ? 
+          <div id='raids'>
+            <RaidDropDown
+                dropShow={raidDropShow}
+                setDropShow={setRaidDropShow}
+                dropName='Raids'
+                divId='raids'
+              />
+          </div>
+            
+            <div className='relative inline-block text-left'>
+                
+                {/* { raidDropShow===true ? 
                     <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-500 rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-gray-400" 
                         role="menu" 
-                        aria-orientation="vertical" 
-                        aria-labelledby="menu-button" 
-                        tabIndex="-1">
+                        >
                       <div className="py-1" role="none">
                         <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-1">Ivory Tower </a> 
                       </div>
@@ -106,7 +99,7 @@ export default function Header(props) {
                       </div>
                     </div> 
                   : ""
-                }
+                } */}
             </div>
 
           {/* Classes Dropdown */}
@@ -116,7 +109,6 @@ export default function Header(props) {
                 setDropShow={setClassDropShow}
                 dropName="Logs"
                 divId="classes"
-
             />
           </div>
           
