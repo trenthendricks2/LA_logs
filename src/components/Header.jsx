@@ -65,7 +65,7 @@ export default function Header(props) {
         </div>
           
       {/* Drop down menus */}
-        <div className='flex' >
+        <div className='flex ' >
 
           {/* Raid dropdown */}
           <div id='raids'>
@@ -76,31 +76,6 @@ export default function Header(props) {
                 divId='raids'
               />
           </div>
-            
-            <div className='relative inline-block text-left'>
-                
-                {/* { raidDropShow===true ? 
-                    <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-500 rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-gray-400" 
-                        role="menu" 
-                        >
-                      <div className="py-1" role="none">
-                        <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-1">Ivory Tower </a> 
-                      </div>
-                      <div className="py-1" role="none">
-                        <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-2">Akkan </a>
-                        <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-3">Kayangel </a>
-                      </div>
-                      <div className="py-1" role="none">
-                        <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-4">Brelshaza </a>
-                        <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-5">Clown </a>
-                      </div>
-                      <div className="py-1" role="none">
-                        <a href="#" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-6">Old Conent </a>
-                      </div>
-                    </div> 
-                  : ""
-                } */}
-            </div>
 
           {/* Classes Dropdown */}
           <div id="classes">
@@ -132,23 +107,21 @@ export default function Header(props) {
                 </button>
               </div>
               { raidGuideDropShow===true ? 
-                <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-500 rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-gray-400" 
+                <div className=" absolute z-10 mt-2 w-40 origin-top-right divide-y divide-gray-500 rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 text-gray-400" 
                   role="menu" 
-                  aria-orientation="vertical" 
-                  aria-labelledby="menu-button" 
                   tabIndex="-1">
-                  <div className="py-1" role="none">
-                    <a href="https://www.lostark.nexus/raids/ivorytower.png" target="_blank"className="block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-1">Ivory Tower </a> 
+                  <div className="py-1 rounded-md" role="none" >
+                    <a href="https://www.lostark.nexus/raids/ivorytower.png" target="_blank"className="block px-4 py-2 text-sm hover:bg-gray-700 " role="menuitem" tabIndex="-1" id="menu-item-1">Ivory Tower </a> 
                   </div>
-                  <div className="py-1" role="none">
+                  <div className="py-1 rounded-md" role="none">
                     <a href="https://www.lostark.nexus/raids/akkan.png" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-2">Akkan </a>
                     <a href="https://www.lostark.nexus/raids/kaya.png" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-3">Kayangel </a>
                   </div>
-                  <div className="py-1" role="none">
+                  <div className="py-1 rounded-md" role="none">
                     <a href="https://maxroll.gg/lost-ark/legion-raids/brelshaza-gate-1" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-4">Brelshaza </a>
                     <a href="https://www.lostark.nexus/raids/clown.png" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-5">Clown </a>
                   </div>
-                  <div className="py-1" role="none">
+                  <div className="py-1 rounded-md" role="none">
                     <a href="#" target="_blank" className=" block px-4 py-2 text-sm hover:bg-gray-700" role="menuitem" tabIndex="-1" id="menu-item-6">Old Conent </a>
                   </div>
                 </div> 

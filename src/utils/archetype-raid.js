@@ -123,100 +123,100 @@ export const raids = {
   Ivory_Tower: {
     Gate_1: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_2: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_3: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_4: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
   },
   Akkan: {
     Gate_1: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_2: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_3: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
   },
   Kayangel: {
     Gate_1: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_2: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_3: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
   },
   Brelshaza: {
     Gate_1: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_2: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_3: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
     Gate_4: {
       Guide: "",
-      Logs: ""
+      Logs: "#"
     },
   },
   Old_Content: {
     Clown: {
       Gate_1: {
         Guide: "",
-        Logs: ""
+        Logs: "#"
       },
       Gate_2: {
         Guide: "",
-        Logs: ""
+        Logs: "#"
       },
       Gate_3: {
         Guide: "",
-        Logs: ""
+        Logs: "#"
       },
     },
     Vykas: {
       Gate_1: {
         Guide: "",
-        Logs: ""
+        Logs: "#"
       },
       Gate_2: {
         Guide: "",
-        Logs: ""
+        Logs: "#"
       },
     },
     Valtan: {
       Gate_1: {
         Guide: "",
-        Logs: ""
+        Logs: "#"
       },
       Gate_2: {
         Guide: "",
-        Logs: ""
+        Logs: "#"
       },
     }
   },
