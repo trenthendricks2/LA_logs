@@ -87,7 +87,7 @@ export default function RankingTable() {
                 <tr className=''>
                     <th className='w-auto px-2 border border-gray-600'>Rank</th>
                     <th className='w-80 px-2 border border-gray-600'>Name</th>
-                    <th className='w-auto px-2 border border-gray-600'>DPS</th>
+                    <th className='w-24 px-2 border border-gray-600'>DPS</th>
                     <th className='w-auto px-2 border border-gray-600'>iLvl</th>
                     <th className='w-auto px-2 border border-gray-600'>Duration</th>
                     <th className='w-auto px-2 border border-gray-600'>Date</th>
