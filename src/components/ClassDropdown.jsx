@@ -10,19 +10,20 @@ export default function Dropdown(props) {
    
     const target = document.querySelector('#'+divId)
     
-    const eventListen = (event) =>{
-      const withinBoundaries = event.composedPath().includes(target)
-  
-        if (withinBoundaries) {
-        } else {
-          document.removeEventListener('click', eventListen)
-          setDropShow(false)
-          setSClassDropShow(false)
-        }
-    }
-    if(dropShow===true){
-      document.addEventListener('click', eventListen) 
-    }
+    /* Event Listener to close dropdown */
+      const eventListen = (event) =>{
+        const withinBoundaries = event.composedPath().includes(target)
+    
+          if (withinBoundaries) {
+          } else {
+            document.removeEventListener('click', eventListen)
+            setDropShow(false)
+            setSClassDropShow(false)
+          }
+      }
+      if(dropShow===true){
+        document.addEventListener('click', eventListen) 
+      }
 
     const SubClassDropShow = (c) => {
       setSClassDropShow(c)
