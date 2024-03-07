@@ -161,14 +161,15 @@ export default function RankingTable(props) {
             </thead>
             <tbody>
                 {Object.keys(exampleData.rank).map((rankNum) => {
+                    let player = exampleData.rank[rankNum]
                     return (
                         <tr key={rankNum}>
-                            <td className='text-right pr-3 border border-gray-700'> { percentileColor((exampleData.rank[rankNum].percentile), rankNum) } </td>
-                            <td className='text-left pl-3 border border-gray-700 capitalize'> { classColor(exampleData.rank[rankNum].subClass, exampleData.rank[rankNum].name) } </td>
-                            <td className='text-right px-3 border border-gray-700'>{exampleData.rank[rankNum].DPS}</td>
-                            <td className='text-right px-1 border border-gray-700'>{exampleData.rank[rankNum].iLvl}</td>
-                            <td className='text-right pr-3 border border-gray-700'>{exampleData.rank[rankNum].duration}</td>
-                            <td className='text-right pr-3 border border-gray-700'>{exampleData.rank[rankNum].date}</td>
+                            <td className='text-right pr-3 border border-gray-700'> { percentileColor((player.percentile), rankNum) } </td>
+                            <td className='text-left pl-3 border border-gray-700 capitalize'> { classColor(player.subClass, player.name) } </td>
+                            <td className='text-right px-3 border border-gray-700'>{player.DPS}</td>
+                            <td className='text-right px-1 border border-gray-700'>{player.iLvl}</td>
+                            <td className='text-right pr-3 border border-gray-700'>{player.duration}</td>
+                            <td className='text-right pr-3 border border-gray-700'>{player.date}</td>
                         </tr>
                     )
                 })} 
