@@ -14,7 +14,7 @@ function App() {
   return (
    <main className='min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-900 text-white text-sm sm:text-base'>
     <Header searchPlayer={searchPlayer}/>
-    <Body playersearch={playersearch}/>
+    <Body playersearch={playersearch} searchPlayer={searchPlayer}/>
     {/* <Footer/> */}
    </main>
   )

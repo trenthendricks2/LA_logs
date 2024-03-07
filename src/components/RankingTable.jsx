@@ -79,9 +79,11 @@ const exampleData = {
     }
 }
 
-export default function RankingTable() {
+export default function RankingTable(props) {
+    const {playersearch, searchPlayer} = props
+
   return (
-    <div>
+    <div className=''>
         <table className="bg-gray-800 text-gray-400 border border-gray-500">
             <thead>
                 <tr className=''>
@@ -109,7 +111,9 @@ export default function RankingTable() {
                                 }
                             
                             </td>
-                            <td className='text-left pl-3 border border-gray-700'>{exampleData.rank[rankNum].name}</td>
+                            <td className='text-left pl-3 border border-gray-700 capitalize'>
+                                <a href='#' onClick={(e) => {searchPlayer(exampleData.rank[rankNum].name)}}> {exampleData.rank[rankNum].name} </a>
+                            </td>
                             <td className='text-right px-3 border border-gray-700'>{exampleData.rank[rankNum].DPS}</td>
                             <td className='text-right px-1 border border-gray-700'>{exampleData.rank[rankNum].iLvl}</td>
                             <td className='text-right pr-3 border border-gray-700'>{exampleData.rank[rankNum].duration}</td>
