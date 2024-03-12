@@ -7,8 +7,8 @@ export default function Body(props) {
 
   return (
     <div className=''>
-      <RankingTable playerSearch={playerSearch} searchPlayer={searchPlayer} playerSearchObject={playerSearchObject}/>
-      {playerSearchObject ? <PlayerSearchTable playerSearchObject={playerSearchObject} playerSearch={playerSearch}/>:""}
+      
+      {playerSearchObject ? <PlayerSearchTable playerSearchObject={playerSearchObject} playerSearch={playerSearch}/>:<RankingTable playerSearch={playerSearch} searchPlayer={searchPlayer} playerSearchObject={playerSearchObject}/>}
     </div>
   )
 }
