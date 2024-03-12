@@ -2,12 +2,11 @@ import React from 'react'
 import RankingTable from './RankingTable';
 
 export default function Body(props) {
-  const {playersearch, searchPlayer} = props;
+  const {playerSearch, searchPlayer, playerSearchObject } = props;
 
   return (
     <div className=''>
-      <RankingTable playersearch={playersearch} searchPlayer={searchPlayer}/>
-      {playersearch}
+      <RankingTable playerSearch={playerSearch} searchPlayer={searchPlayer} playerSearchObject={playerSearchObject}/>
     </div>
   )
 }

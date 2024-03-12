@@ -22,7 +22,7 @@ export default function Header(props) {
 
   const submitSearchPlayer = (e) => {
     e.preventDefault()
-    searchPlayer(input)
+    searchPlayer(input.toLowerCase())
   }
 
   

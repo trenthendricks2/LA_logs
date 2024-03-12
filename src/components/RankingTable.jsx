@@ -29,7 +29,7 @@ import aeromancerIcon from '../utils/classes/603.png'
 const exampleData = {
     rank: {
         '1' : {
-            name: 'Tony',
+            name: 'tony',
             DPS: '3 mil',
             iLvl: '1622',
             duration: '2:45',
@@ -38,7 +38,7 @@ const exampleData = {
             percentile: 100
         },
         '2' : {
-            name: 'Brony',
+            name: 'brony',
             DPS: '2.8 mil',
             iLvl: '1620',
             duration: '2:25',
@@ -106,9 +106,10 @@ const exampleData = {
 }
 
 export default function RankingTable(props) {
-    const {playersearch, searchPlayer} = props
+    const {playerSearch, searchPlayer, playerSearchObject } = props
 
     const percentileColor = (percentile, rankNum) => {
+        console.log(playerSearchObject)
         if (percentile === 100) {return(<div className='text-amber-400'>{rankNum} </div>)}
         if (percentile < 100 && percentile >= 90) {return( <div className='text-pink-500'>{rankNum}</div>)}
         if (percentile < 90 && percentile >= 70) {return( <div className='text-purple-600'>{rankNum}</div>)}
@@ -146,6 +147,10 @@ export default function RankingTable(props) {
         else {return(<a className="text-gray-400" href='#' onClick={() => {searchPlayer(name)}}> {name} </a>)}
     }
 
+    const searchForPlayerLogs = (name) =>{
+        
+    }
+
   return (
     <div className=''>
         <table className="bg-gray-800 text-gray-400 border border-gray-500">
@@ -175,6 +180,7 @@ export default function RankingTable(props) {
                 })} 
             </tbody>
         </table>
+        {playerSearch}
     </div>
   )
 }
