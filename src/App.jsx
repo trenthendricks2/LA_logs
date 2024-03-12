@@ -10,12 +10,10 @@ function App() {
   
 
   function searchPlayer (playerName) {
-    
     axios.post('http://localhost:5000/post/playerSearch', { 
             "playerName": playerName
           })
           .then( response => {
-            console.log('Server Response: '+playerName +' ', response.data)
            setPlayerSearchObject(response.data)
           })
           .catch( error => {

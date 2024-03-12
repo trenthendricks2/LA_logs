@@ -109,7 +109,6 @@ export default function RankingTable(props) {
     const {playerSearch, searchPlayer, playerSearchObject } = props
 
     const percentileColor = (percentile, rankNum) => {
-        console.log(playerSearchObject)
         if (percentile === 100) {return(<div className='text-amber-400'>{rankNum} </div>)}
         if (percentile < 100 && percentile >= 90) {return( <div className='text-pink-500'>{rankNum}</div>)}
         if (percentile < 90 && percentile >= 70) {return( <div className='text-purple-600'>{rankNum}</div>)}
@@ -180,7 +179,6 @@ export default function RankingTable(props) {
                 })} 
             </tbody>
         </table>
-        {playerSearch}
     </div>
   )
 }
